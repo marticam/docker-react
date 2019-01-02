@@ -7,3 +7,19 @@ before_install:
 
 script:
   - docker run marticam/docker-react npm run test -- --coverage
+
+#elasticbeanstalk
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "docker-react"
+  env: "DockerReact-env"
+#s3  
+  bucket_name: "elasticbeanstalk-us-east-2-244061053167"
+  bucket_path: "docker-react"
+  on:
+    branch: master
+#iAM
+access_key_id: $AWS_Access_Key
+secret_access_key:
+  secure: "$AWS_Secret_Key"
