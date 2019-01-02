@@ -20,6 +20,6 @@ deploy:
   on:
     branch: master
 #iAM
-access_key_id: $AWS_Access_Key
-secret_access_key:
-  secure: "$AWS_Secret_Key"
+  access_key_id: $AWS_Access_Key
+  secret_access_key:
+    secure: "$AWS_Secret_Key"
